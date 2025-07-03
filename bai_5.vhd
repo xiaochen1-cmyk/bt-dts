@@ -1,3 +1,22 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 07/02/2025 10:12:21 PM
+-- Design Name: 
+-- Module Name: bai_5 - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -7,7 +26,6 @@ entity bai_5 is
     Q   : out std_logic_vector(2 downto 0)
   );
 end bai_5;
-
 architecture rtl of bai_5 is
   component T_FF
     port (
@@ -17,7 +35,6 @@ architecture rtl of bai_5 is
       Q_inv : Buffer std_logic
     );
   end component;
-
   signal q0, q1, q2 : std_logic;
   signal t1, t2     : std_logic;
 begin
