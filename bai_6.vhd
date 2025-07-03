@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 07/01/2025 08:59:39 PM
+-- Create Date: 07/02/2025 10:40:39 PM
 -- Design Name: 
--- Module Name: bai_3 - Behavioral
+-- Module Name: bai_6 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -40,7 +40,7 @@ end bai_6;
 
 architecture rtl of bai_6 is
 
-    component JK_FF
+component JK_FF
         Port ( J     : in  STD_LOGIC;
                K     : in  STD_LOGIC;
                CLK   : in  STD_LOGIC;
@@ -63,9 +63,7 @@ j2_sig <= not q2_sig and not q1_sig and not q0_sig;
 k2_sig<=  q2_sig and not q1_sig and not q0_sig;
     j1_sig <= not  q0_sig ;   
     k1_sig <= not q0_sig;                  
-
-                     
-
+               
     FF0 : JK_FF
         port map (
             J     => j0_sig,
@@ -74,7 +72,6 @@ k2_sig<=  q2_sig and not q1_sig and not q0_sig;
             Q     => q0_sig,
             Q_inv => open
         );
-
     FF1 : JK_FF
         port map (
             J     => j1_sig,    
@@ -83,7 +80,6 @@ k2_sig<=  q2_sig and not q1_sig and not q0_sig;
             Q     => q1_sig,
             Q_inv => open
         );
-
     FF2 : JK_FF
         port map (
             J     => j2_sig,    
@@ -91,12 +87,8 @@ k2_sig<=  q2_sig and not q1_sig and not q0_sig;
             CLK   => CLK,
             Q     => q2_sig,
             Q_inv => open
-        );
-          
-  
-
+        );   
     Q <= q2_sig & q1_sig & q0_sig;
-
     
 end rtl;
 
