@@ -41,9 +41,9 @@ begin
   t1 <= (not q0 and not q2 and q1) or (q2 and not q1 and not q0);
   t2 <= not q1 and not q0;
 
-  ff0 : T_FF port map (T => '1', CLK => CLK, Q => q0, Q_inv => open);
-  ff1 : T_FF port map (T => t1,  CLK => CLK, Q => q1, Q_inv => open);
-  ff2 : T_FF port map (T => t2,  CLK => CLK, Q => q2, Q_inv => open);
+  FF0 : T_FF port map (T => '1', CLK => CLK, Q => q0, Q_inv => open);
+  FF1 : T_FF port map (T => t1,  CLK => CLK, Q => q1, Q_inv => open);
+  FF2 : T_FF port map (T => t2,  CLK => CLK, Q => q2, Q_inv => open);
 
   Q <= q2 & q1 & q0;
 end rtl;
