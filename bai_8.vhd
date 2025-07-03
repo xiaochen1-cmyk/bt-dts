@@ -43,9 +43,9 @@ architecture rtl of bai_8 is
 begin
   t2 <=  q1;
 
-  ff0 : T_FF port map (T => '0', CLK => CLK, Q => q0, Q_inv => open);
-  ff1 : T_FF port map (T => '1',  CLK => CLK,  Q => q1, Q_inv => open);
-  ff2 : T_FF port map (T => t2,  CLK => CLK, Q => q2, Q_inv => open);
+  FF0 : T_FF port map (T => '0', CLK => CLK, Q => q0, Q_inv => open);
+  FF1 : T_FF port map (T => '1',  CLK => CLK,  Q => q1, Q_inv => open);
+  FF2 : T_FF port map (T => t2,  CLK => CLK, Q => q2, Q_inv => open);
 
   Q <= q2 & q1 & q0;
 end rtl;
