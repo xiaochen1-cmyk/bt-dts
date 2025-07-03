@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 07/01/2025 08:59:39 PM
+-- Create Date: 07/01/2025 9:42:12 PM
 -- Design Name: 
 -- Module Name: bai_3 - Behavioral
 -- Project Name: 
@@ -21,16 +21,6 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity bai_3 is
     Port ( CLK : in  STD_LOGIC;
                    
@@ -54,18 +44,14 @@ architecture rtl of bai_3 is
     signal j0_sig, k0_sig: STD_LOGIC;
 
     signal j1_sig, k1_sig         : STD_LOGIC;
-    signal j2_sig, k2_sig         : STD_LOGIC;
-     
-
-    
+    signal j2_sig, k2_sig         : STD_LOGIC; 
+  
 begin
 j2_sig <= not q2_sig and q1_sig and q0_sig;
 k2_sig<= not q1_sig and q0_sig;
     j1_sig <= not q2_sig and q0_sig ;   
-    k1_sig <= q0_sig;                  
-
-                     
-
+    k1_sig <= q0_sig;                                   
+   
     FF0 : JK_FF
         port map (
             J     => '1',
@@ -91,13 +77,8 @@ k2_sig<= not q1_sig and q0_sig;
             CLK   => CLK,
             Q     => q2_sig,
             Q_inv => open
-        );
-          
-  
+        );         
 
     Q <= q2_sig & q1_sig & q0_sig;
-
     
 end rtl;
-
-
