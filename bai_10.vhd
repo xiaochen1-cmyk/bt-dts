@@ -54,9 +54,9 @@ begin
   d1 <=   not q1 and q0;
   
 
-  ff0 : D_FF port map (D => '1', CLK => CLK, Q => q0, Q_inv => open);
-  ff1 : D_FF port map (D => d1,  CLK => CLK,  Q => q1, Q_inv => open);
-  ff2 : D_FF port map (D => d2,  CLK => CLK, Q => q2, Q_inv => open);
+  FF0 : D_FF port map (D => '1', CLK => CLK, Q => q0, Q_inv => open);
+  FF1 : D_FF port map (D => d1,  CLK => CLK,  Q => q1, Q_inv => open);
+  FF2 : D_FF port map (D => d2,  CLK => CLK, Q => q2, Q_inv => open);
 
   Q <= q2 & q1 & q0;
 end rtl;
